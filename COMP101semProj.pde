@@ -1,4 +1,5 @@
 //SEMESTER PROJECT
+//hurr durr
 
 player player1 = new player(500, 500, 20, 50);
 building randomBuilding = new building(100, 80, 60);
