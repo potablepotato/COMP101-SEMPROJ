@@ -51,7 +51,7 @@ class player {
   
   void adjustHappy (int delta) {
   //delta will be the name of every one of these parameters so don't make a separate variable just called delta
-    if (happiness <= 100) {
+    if (happiness <= 100 || delta < 0) {
       happiness += delta;
       textSize(10);
       if (delta != 0) {

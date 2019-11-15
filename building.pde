@@ -19,7 +19,6 @@ class building {
   }
   
   void drawBuilding() {
-    rectMode(CORNER);
     fill(150);
     //rect(xPos, (height-200)-bldgHeight, bldgWidth, bldgHeight);
     image(image, xPos, yPos);
@@ -27,10 +26,24 @@ class building {
   
   boolean proximityCheck() {
   //check if player is standing in front of building
-    if (dist(xPos+bldgWidth/2, 500, player1.getX(), 500) < bldgWidth/2) {
+    if (dist(xPos+bldgWidth/2, 500, player1.getX(), 500) < 20) {
       return true;
     } else {
       return false;
+    }
+  }
+  
+  void giveEnterOption() {
+    //check if player is nearby a building's door and display tooltip
+    //allow player to enter building by pressing mouse1
+    if (proximityCheck()) {
+      rectMode(CENTER);
+      fill(255);
+      rect(player1.getX(), 450, 250, 30);
+      textAlign(CENTER);
+      fill(0);
+      textSize(20);
+      text("enter " + bldgName + "?", player1.getX(), 455);
     }
   }
   
