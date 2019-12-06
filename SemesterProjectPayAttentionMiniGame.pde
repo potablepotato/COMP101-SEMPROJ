@@ -1,11 +1,16 @@
 float s = 5;
-float w =1;
+float w = 700;
 float wDelta = 100;
+int timeStart = second();
+int timeElapsed = second() + 10;
 void setup() {
   size(1400, 1000);
   background(0);
 }
  void draw() {
+  if(millis() > 10000 ){
+  exit();
+  }
    noStroke();
    fill(255);
    rect(100, 400, 1200, 200);
@@ -29,8 +34,9 @@ void setup() {
   fill(0);
   rect(600, 400, 5, 200);
   rect(800, 400, 5, 200);
-  
-   }
+  if(w >500 && w <710) {
+    
+ }
  //Causes the bar to grow everytime the player clicks the mouse
  void mousePressed() {
    w += wDelta;
